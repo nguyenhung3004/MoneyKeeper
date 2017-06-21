@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kLR-dS-dam">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--records-->
+        <scene sceneID="pIZ-zQ-x6u">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Records" referencedIdentifier="records" id="Ual-73-jDM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DMs-cH-a9g"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xiv-xF-71j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="-809"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="erN-Pg-COu">
+            <objects>
+                <viewController id="AN6-LP-ceQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zHb-4p-n8S"/>
+                        <viewControllerLayoutGuide type="bottom" id="9uG-i5-Vw7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bVc-sK-M4g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Edu-K5-d3U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfa-xB-BqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="129"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0oT-cE-UU6">
+            <objects>
+                <tabBarController id="kLR-dS-dam" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZUK-Ef-hbh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xiQ-CZ-pbL" kind="relationship" relationship="viewControllers" id="pUD-8S-Fxv"/>
+                        <segue destination="AN6-LP-ceQ" kind="relationship" relationship="viewControllers" id="iY6-rN-Ci3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sc5-ro-QA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="-128"/>
+        </scene>
+        <!--Ghi chép-->
+        <scene sceneID="ihP-xS-bHc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xiQ-CZ-pbL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ghi chép" image="GhiChep_light" selectedImage="GhiChep_hightlight" id="yWM-vs-YJy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qvb-De-znL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.27450980390000002" green="0.58039215690000001" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ual-73-jDM" kind="relationship" relationship="rootViewController" id="JBc-i3-FJV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WzP-Q2-QFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="-605"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GhiChep_hightlight" width="25" height="25"/>
+        <image name="GhiChep_light" width="25" height="25"/>
+    </resources>
+</document>
