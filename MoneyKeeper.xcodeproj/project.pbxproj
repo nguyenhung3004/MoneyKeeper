@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E185FE81EFB441600BB8F6C /* SideMenuTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E185FE71EFB441600BB8F6C /* SideMenuTableVC.swift */; };
+		0E185FEB1EFB45B700BB8F6C /* CustomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E185FEA1EFB45B700BB8F6C /* CustomContainerView.swift */; };
 		0E1D32751EF9057300E2E12A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D32741EF9057300E2E12A /* AppDelegate.swift */; };
 		0E1D32771EF9057300E2E12A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D32761EF9057300E2E12A /* ViewController.swift */; };
 		0E1D327D1EF9057300E2E12A /* MoneyKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D327B1EF9057300E2E12A /* MoneyKeeper.xcdatamodeld */; };
@@ -16,10 +18,13 @@
 		0E1D32901EF9071D00E2E12A /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D328F1EF9071D00E2E12A /* Book.png */; };
 		0E9D73FA1EF9301000598A95 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D73F91EF9301000598A95 /* Button.swift */; };
 		0EA186A91EFA103400898D53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA186A81EFA103400898D53 /* Main.storyboard */; };
-		0EA186AB1EFA122D00898D53 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA186AA1EFA122D00898D53 /* Records.storyboard */; };
+		0EA186AD1EFA1AB400898D53 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA186AC1EFA1AB400898D53 /* Note.storyboard */; };
+		0EA2D1851EFA5E2C005320B8 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA2D1841EFA5E2C005320B8 /* Records.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E185FE71EFB441600BB8F6C /* SideMenuTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableVC.swift; sourceTree = "<group>"; };
+		0E185FEA1EFB45B700BB8F6C /* CustomContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomContainerView.swift; sourceTree = "<group>"; };
 		0E1D32711EF9057300E2E12A /* MoneyKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1D32741EF9057300E2E12A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E1D32761EF9057300E2E12A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +36,8 @@
 		0E1D328F1EF9071D00E2E12A /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
 		0E9D73F91EF9301000598A95 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		0EA186A81EFA103400898D53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
-		0EA186AA1EFA122D00898D53 /* Records.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
+		0EA186AC1EFA1AB400898D53 /* Note.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = SOURCE_ROOT; };
+		0EA2D1841EFA5E2C005320B8 /* Records.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E185FE91EFB443500BB8F6C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D32761EF9057300E2E12A /* ViewController.swift */,
+				0E185FE71EFB441600BB8F6C /* SideMenuTableVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		0E1D32681EF9057300E2E12A = {
 			isa = PBXGroup;
 			children = (
@@ -66,10 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				0E1D32741EF9057300E2E12A /* AppDelegate.swift */,
-				0E1D32761EF9057300E2E12A /* ViewController.swift */,
-				0EA186A81EFA103400898D53 /* Main.storyboard */,
-				0EA186AA1EFA122D00898D53 /* Records.storyboard */,
+				0E185FE91EFB443500BB8F6C /* Controllers */,
+				0E87EBCD1EFA714900F6525C /* Storyboard */,
 				0E9D73F91EF9301000598A95 /* Button.swift */,
+				0E185FEA1EFB45B700BB8F6C /* CustomContainerView.swift */,
 				0E1D327E1EF9057300E2E12A /* Assets.xcassets */,
 				0E1D32801EF9057300E2E12A /* LaunchScreen.storyboard */,
 				0E1D32891EF905EF00E2E12A /* Image */,
@@ -77,6 +92,16 @@
 				0E1D327B1EF9057300E2E12A /* MoneyKeeper.xcdatamodeld */,
 			);
 			path = MoneyKeeper;
+			sourceTree = "<group>";
+		};
+		0E87EBCD1EFA714900F6525C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0EA186A81EFA103400898D53 /* Main.storyboard */,
+				0EA2D1841EFA5E2C005320B8 /* Records.storyboard */,
+				0EA186AC1EFA1AB400898D53 /* Note.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA186AD1EFA1AB400898D53 /* Note.storyboard in Resources */,
 				0E1D328A1EF905EF00E2E12A /* Image in Resources */,
-				0EA186AB1EFA122D00898D53 /* Records.storyboard in Resources */,
+				0EA2D1851EFA5E2C005320B8 /* Records.storyboard in Resources */,
 				0EA186A91EFA103400898D53 /* Main.storyboard in Resources */,
 				0E1D32821EF9057300E2E12A /* LaunchScreen.storyboard in Resources */,
 				0E1D32901EF9071D00E2E12A /* Book.png in Resources */,
@@ -154,6 +180,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E185FE81EFB441600BB8F6C /* SideMenuTableVC.swift in Sources */,
+				0E185FEB1EFB45B700BB8F6C /* CustomContainerView.swift in Sources */,
 				0E1D32771EF9057300E2E12A /* ViewController.swift in Sources */,
 				0E1D327D1EF9057300E2E12A /* MoneyKeeper.xcdatamodeld in Sources */,
 				0E1D32751EF9057300E2E12A /* AppDelegate.swift in Sources */,
