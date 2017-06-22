@@ -16,13 +16,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var coverButton: UIButton!
     
+    @IBOutlet weak var caculatorContainerView: UIView!
+    
+    @IBOutlet weak var bottomCaculator: NSLayoutConstraint!
+    
     @IBAction func sideMenuControl(_ sender: Any) {
-        isSideMenuOpen = !isSideMenuOpen
+        
+        if !isCaculatorOpen{
+            isSideMenuOpen = !isSideMenuOpen
+        } else {
+            isCaculatorOpen = false
+            isSideMenuOpen = true
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         isSideMenuOpen = false
+        isCaculatorOpen = false
+        NotificationCenter.default.addObserver(self, selector: #selector(configForKeyboardOpen), name: Notification.Name.init("caculator"), object: nil)
     }
 
     var isSideMenuOpen: Bool = true{
@@ -45,6 +57,26 @@ class ViewController: UIViewController {
         }
     }
     
+    var isCaculatorOpen: Bool = true{
+        didSet {
+            if isCaculatorOpen{
+                configForKeyboardOpen()
+                
+            } else {
+                configForKeyboardClose()
+            }
+            UIView.animate(withDuration: 0.35, animations: {
+                self.view.layoutIfNeeded()
+            }) { (isSuccess) in
+                if self.isCaculatorOpen{
+                    
+                } else {
+                    self.caculatorContainerView.clipsToBounds = true
+                }
+            }
+        }
+    }
+    
     func configForSideMenuOpeningState(){
         sideMenuContainerView.clipsToBounds = false
         topSideMenuContraint.constant = 0
@@ -58,10 +90,19 @@ class ViewController: UIViewController {
     }
     @IBAction func clickCoverButton(_ sender: Any) {
         isSideMenuOpen = false
+//        isCaculatorOpen = false
+    }
+    
+    
+    // Caculator
+    func configForKeyboardOpen(){
+        caculatorContainerView.clipsToBounds = false
+        bottomCaculator.constant = 0
+    }
+    
+    func configForKeyboardClose(){
+        bottomCaculator.constant = -(caculatorContainerView.bounds.height + 60)
     }
     
 }
 
-extension ViewController: UITextFieldDelegate{
-    
-}

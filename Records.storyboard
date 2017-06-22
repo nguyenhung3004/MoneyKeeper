@@ -35,12 +35,6 @@
                                     <action selector="clickCoverButton:" destination="Uzm-8D-BSP" eventType="touchUpInside" id="x9E-qQ-71l"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eed-Wi-hH3">
-                                <rect key="frame" x="0.0" y="378" width="375" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="1Zy-Iq-np6"/>
-                                </constraints>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FON-mT-C5X" customClass="CustomContainerView" customModule="MoneyKeeper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="240"/>
                                 <constraints>
@@ -59,6 +53,15 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="YTQ-AE-gZi" kind="embed" id="bTw-9B-ChU"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eed-Wi-hH3">
+                                <rect key="frame" x="0.0" y="378" width="375" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="1Zy-Iq-np6"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="hi5-Py-csP" kind="embed" id="DPf-8h-zEp"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -129,6 +132,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomCaculator" destination="ABO-nw-UkR" id="ENB-2S-TyF"/>
+                        <outlet property="caculatorContainerView" destination="Eed-Wi-hH3" id="cDC-k6-sfv"/>
                         <outlet property="coverButton" destination="gPT-H2-sB3" id="klp-jL-P57"/>
                         <outlet property="sideMenuContainerView" destination="FON-mT-C5X" id="0ro-g4-gHV"/>
                         <outlet property="topSideMenuContraint" destination="dKj-bq-EqI" id="PNr-lE-f7Y"/>
@@ -306,10 +311,10 @@
             </objects>
             <point key="canvasLocation" x="2669.5999999999999" y="-1399.2503748125939"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Main TableVC-->
         <scene sceneID="fsc-4U-AvQ">
             <objects>
-                <tableViewController id="emH-44-GJl" sceneMemberID="viewController">
+                <tableViewController id="emH-44-GJl" customClass="MainTableVC" customModule="MoneyKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bUW-N4-Xi7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -545,7 +550,7 @@
                                         <rect key="frame" x="0.0" y="293" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gz6-iA-Hjj" id="HzX-pt-saa">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMN-BQ-RQE">
@@ -715,10 +720,13 @@
                             <outlet property="delegate" destination="emH-44-GJl" id="pu2-Hg-oAu"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="textField" destination="fUV-ZJ-dh8" id="9iy-uv-ZdD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0y-MB-3du" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2669.5999999999999" y="-685.45727136431788"/>
+            <point key="canvasLocation" x="2670" y="-876"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4pg-GD-KCw">
@@ -729,19 +737,20 @@
                         <viewControllerLayoutGuide type="bottom" id="nZk-TC-KJi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bdc-8p-1B2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LlJ-Xc-fIl">
-                                <rect key="frame" x="4" y="2" width="367" height="663"/>
+                                <rect key="frame" x="4" y="2" width="367" height="236"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="FHk-WL-fP3">
-                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="236"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xid-cp-p1d" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="131"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="45.5"/>
                                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Button">
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="C">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -757,8 +766,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y52-eF-Ifu" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="133" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="47.5" width="90.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="7">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -775,8 +785,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buv-ad-xXz" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="266" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="95" width="90.5" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="4">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -792,8 +803,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRL-kF-jq8" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="399" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="143" width="90.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="1">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -809,8 +821,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s18-0p-5NE" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="532" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="190.5" width="90.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="0">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -828,11 +841,12 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XG4-2o-icY">
-                                        <rect key="frame" x="92.5" y="0.0" width="90" height="663"/>
+                                        <rect key="frame" x="92.5" y="0.0" width="90" height="236"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9U-US-6l5" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title=":">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -848,8 +862,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oj-b8-eE5" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="133" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="47.5" width="90" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="8">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -865,8 +880,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzn-mt-cT0" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="266" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="95" width="90" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="5">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -882,8 +898,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms9-ih-pYw" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="399" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="143" width="90" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="2">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -899,8 +916,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3I-0u-PHy" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="532" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="190.5" width="90" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="000">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -918,11 +936,12 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="J9G-G2-Q4b">
-                                        <rect key="frame" x="184.5" y="0.0" width="90.5" height="663"/>
+                                        <rect key="frame" x="184.5" y="0.0" width="90.5" height="236"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bte-UO-YTc" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="x">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -932,11 +951,15 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJd-mW-k0y" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="133" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="47.5" width="90.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="9">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -947,11 +970,15 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTE-ss-Vgi" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="266" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="95" width="90.5" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="6">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -961,11 +988,15 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSA-PJ-awi" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="399" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="143" width="90.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="3">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -974,12 +1005,16 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxx-zS-eAD" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="532" width="90.5" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="190.5" width="90.5" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title=",">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -988,17 +1023,21 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xss-kS-vQD">
-                                        <rect key="frame" x="277" y="0.0" width="90" height="663"/>
+                                        <rect key="frame" x="277" y="0.0" width="90" height="236"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-2g-8Hu" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Xóa">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1014,8 +1053,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-Ik-i6l" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="133" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="47.5" width="90" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="-">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1031,8 +1071,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wp-9C-uAe" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="266" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="95" width="90" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="+">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1048,8 +1089,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHg-cQ-Xd0" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="399" width="90" height="131"/>
-                                                <state key="normal" title="Button">
+                                                <rect key="frame" x="0.0" y="143" width="90" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1065,9 +1107,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCU-BP-tvu" customClass="Button" customModule="MoneyKeeper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="532" width="90" height="131"/>
+                                                <rect key="frame" x="0.0" y="190.5" width="90" height="45.5"/>
                                                 <color key="backgroundColor" red="0.23137254900000001" green="0.47843137250000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Button">
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="=">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1098,7 +1141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aG-Py-wyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="-18"/>
+            <point key="canvasLocation" x="1788" y="-336"/>
         </scene>
     </scenes>
     <resources>
