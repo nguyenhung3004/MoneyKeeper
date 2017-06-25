@@ -16,20 +16,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var coverButton: UIButton!
     
+    @IBOutlet weak var bottomTableVC: NSLayoutConstraint!
+    @IBOutlet weak var bottomCalcu: NSLayoutConstraint!
     @IBOutlet weak var caculatorContainerView: UIView!
     
-    @IBOutlet weak var bottomCaculator: NSLayoutConstraint!
-    
+
     @IBAction func sideMenuControl(_ sender: Any) {
         
+        if isCaculatorOpen {
+            configForKeyboardClose()
+        }
         isSideMenuOpen = !isSideMenuOpen
-        isCaculatorOpen = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         isSideMenuOpen = false
-        isCaculatorOpen = false
+
         NotificationCenter.default.addObserver(self, selector: #selector(configForKeyboardOpen), name: Notification.Name.init("caculator"), object: nil)
         
     }
@@ -64,7 +67,13 @@ class ViewController: UIViewController {
             }
             UIView.animate(withDuration: 0.35, animations: {
                 self.view.layoutIfNeeded()
-            })
+            }) { (isSuccess) in
+                if self.isCaculatorOpen{
+                    
+                } else {
+                    self.caculatorContainerView.clipsToBounds = true
+                }
+            }
         }
     }
     
@@ -88,15 +97,18 @@ class ViewController: UIViewController {
     // Caculator
     func configForKeyboardOpen(){
         caculatorContainerView.clipsToBounds = false
-        bottomCaculator.constant = 0
+        bottomCalcu.constant = 0
+        bottomTableVC.constant = caculatorContainerView.bounds.height - (tabBarController?.tabBar.bounds.height)!
         tabBarController?.tabBar.isHidden = true
         UIView.animate(withDuration: 0.35, animations: {
             self.view.layoutIfNeeded()
         })
+//        isCaculatorOpen = !isCaculatorOpen
     }
     
     func configForKeyboardClose(){
-        bottomCaculator.constant = -(caculatorContainerView.bounds.height + (tabBarController?.tabBar.bounds.height)!)
+        bottomCalcu.constant = -caculatorContainerView.bounds.height
+        bottomTableVC.constant = 0
         tabBarController?.tabBar.isHidden = false
     }
     
