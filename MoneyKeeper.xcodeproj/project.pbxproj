@@ -17,6 +17,8 @@
 		0E1D328A1EF905EF00E2E12A /* Image in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D32891EF905EF00E2E12A /* Image */; };
 		0E1D32901EF9071D00E2E12A /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D328F1EF9071D00E2E12A /* Book.png */; };
 		0E1E4E1B1EFBA84C00C965F4 /* MainTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */; };
+		0E7F2C921EFE03B700220C24 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F2C911EFE03B700220C24 /* ViewExtension.swift */; };
+		0E7F2C941EFE0BA200220C24 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F2C931EFE0BA200220C24 /* Label.swift */; };
 		0E9D73FA1EF9301000598A95 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D73F91EF9301000598A95 /* Button.swift */; };
 		0EA186A91EFA103400898D53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA186A81EFA103400898D53 /* Main.storyboard */; };
 		0EA186AD1EFA1AB400898D53 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA186AC1EFA1AB400898D53 /* Note.storyboard */; };
@@ -36,6 +38,8 @@
 		0E1D32891EF905EF00E2E12A /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Image; sourceTree = "<group>"; };
 		0E1D328F1EF9071D00E2E12A /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
 		0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableVC.swift; sourceTree = "<group>"; };
+		0E7F2C911EFE03B700220C24 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		0E7F2C931EFE0BA200220C24 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		0E9D73F91EF9301000598A95 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		0EA186A81EFA103400898D53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		0EA186AC1EFA1AB400898D53 /* Note.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = SOURCE_ROOT; };
@@ -86,8 +90,8 @@
 				0E1D32741EF9057300E2E12A /* AppDelegate.swift */,
 				0E185FE91EFB443500BB8F6C /* Controllers */,
 				0E87EBCD1EFA714900F6525C /* Storyboard */,
-				0E9D73F91EF9301000598A95 /* Button.swift */,
-				0E185FEA1EFB45B700BB8F6C /* CustomContainerView.swift */,
+				0E7F2C951EFE0D6B00220C24 /* Supports */,
+				0EA186AC1EFA1AB400898D53 /* Note.storyboard */,
 				0E1D327E1EF9057300E2E12A /* Assets.xcassets */,
 				0E1D32801EF9057300E2E12A /* LaunchScreen.storyboard */,
 				0E1D32891EF905EF00E2E12A /* Image */,
@@ -97,12 +101,22 @@
 			path = MoneyKeeper;
 			sourceTree = "<group>";
 		};
+		0E7F2C951EFE0D6B00220C24 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				0E9D73F91EF9301000598A95 /* Button.swift */,
+				0E7F2C931EFE0BA200220C24 /* Label.swift */,
+				0E185FEA1EFB45B700BB8F6C /* CustomContainerView.swift */,
+				0E7F2C911EFE03B700220C24 /* ViewExtension.swift */,
+			);
+			name = Supports;
+			sourceTree = "<group>";
+		};
 		0E87EBCD1EFA714900F6525C /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				0EA186A81EFA103400898D53 /* Main.storyboard */,
 				0EA2D1841EFA5E2C005320B8 /* Records.storyboard */,
-				0EA186AC1EFA1AB400898D53 /* Note.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -188,7 +202,9 @@
 				0E1D32771EF9057300E2E12A /* ViewController.swift in Sources */,
 				0E1E4E1B1EFBA84C00C965F4 /* MainTableVC.swift in Sources */,
 				0E1D327D1EF9057300E2E12A /* MoneyKeeper.xcdatamodeld in Sources */,
+				0E7F2C941EFE0BA200220C24 /* Label.swift in Sources */,
 				0E1D32751EF9057300E2E12A /* AppDelegate.swift in Sources */,
+				0E7F2C921EFE03B700220C24 /* ViewExtension.swift in Sources */,
 				0E9D73FA1EF9301000598A95 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

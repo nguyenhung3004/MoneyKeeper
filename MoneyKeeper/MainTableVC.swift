@@ -11,9 +11,15 @@ import UIKit
 class MainTableVC: UITableViewController {
 
     @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet var rightView: UIView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textField.delegate = self
+        self.textField.rightView = rightView
+        self.textField.rightViewMode = .always
     }
 
     override func didReceiveMemoryWarning() {

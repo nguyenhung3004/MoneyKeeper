@@ -22,12 +22,8 @@ class ViewController: UIViewController {
     
     @IBAction func sideMenuControl(_ sender: Any) {
         
-        if !isCaculatorOpen{
-            isSideMenuOpen = !isSideMenuOpen
-        } else {
-            isCaculatorOpen = false
-            isSideMenuOpen = true
-        }
+        isSideMenuOpen = !isSideMenuOpen
+        isCaculatorOpen = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +31,7 @@ class ViewController: UIViewController {
         isSideMenuOpen = false
         isCaculatorOpen = false
         NotificationCenter.default.addObserver(self, selector: #selector(configForKeyboardOpen), name: Notification.Name.init("caculator"), object: nil)
+        
     }
 
     var isSideMenuOpen: Bool = true{
@@ -67,13 +64,7 @@ class ViewController: UIViewController {
             }
             UIView.animate(withDuration: 0.35, animations: {
                 self.view.layoutIfNeeded()
-            }) { (isSuccess) in
-                if self.isCaculatorOpen{
-                    
-                } else {
-                    self.caculatorContainerView.clipsToBounds = true
-                }
-            }
+            })
         }
     }
     
@@ -98,10 +89,15 @@ class ViewController: UIViewController {
     func configForKeyboardOpen(){
         caculatorContainerView.clipsToBounds = false
         bottomCaculator.constant = 0
+        tabBarController?.tabBar.isHidden = true
+        UIView.animate(withDuration: 0.35, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
     func configForKeyboardClose(){
-        bottomCaculator.constant = -(caculatorContainerView.bounds.height + 60)
+        bottomCaculator.constant = -(caculatorContainerView.bounds.height + (tabBarController?.tabBar.bounds.height)!)
+        tabBarController?.tabBar.isHidden = false
     }
     
 }
