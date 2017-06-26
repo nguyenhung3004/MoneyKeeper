@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var sideMenuVC: SideMenuTableVC?
+    var pageVC: PageVC?
     @IBOutlet weak var sideMenuContainerView: CustomContainerView!
     
     @IBOutlet weak var topSideMenuContraint: NSLayoutConstraint!
@@ -28,15 +30,20 @@ class ViewController: UIViewController {
         }
         isSideMenuOpen = !isSideMenuOpen
     }
+    
+    @IBOutlet weak var control: Button!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         isSideMenuOpen = false
+        control.setTitle("Chi tiền", for: .normal)
 
         NotificationCenter.default.addObserver(self, selector: #selector(configForKeyboardOpen), name: Notification.Name.init("caculator"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(configForSideMenuClosingState), name: NSNotification.Name(rawValue: "hideSideMenu"), object: nil)
         
     }
-
+    // Side Menu
     var isSideMenuOpen: Bool = true{
         didSet {
             if isSideMenuOpen{
@@ -56,6 +63,26 @@ class ViewController: UIViewController {
             }
         }
     }
+   
+    
+    func configForSideMenuOpeningState(){
+        sideMenuContainerView.clipsToBounds = false
+        topSideMenuContraint.constant = 0
+        self.coverButton.alpha = 0.4
+        self.coverButton.backgroundColor = .gray
+    }
+    
+    func configForSideMenuClosingState(){
+        topSideMenuContraint.constant = -sideMenuContainerView.bounds.height
+        self.coverButton.alpha = 0
+        self.coverButton.isHidden = true
+    }
+    @IBAction func clickCoverButton(_ sender: Any) {
+        isSideMenuOpen = false
+    }
+    
+    
+    // Caculator
     
     var isCaculatorOpen: Bool = true{
         didSet {
@@ -77,24 +104,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func configForSideMenuOpeningState(){
-        sideMenuContainerView.clipsToBounds = false
-        topSideMenuContraint.constant = 0
-        self.coverButton.alpha = 0.4
-        self.coverButton.backgroundColor = .gray
-    }
-    
-    func configForSideMenuClosingState(){
-        topSideMenuContraint.constant = -sideMenuContainerView.bounds.height
-        self.coverButton.alpha = 0
-    }
-    @IBAction func clickCoverButton(_ sender: Any) {
-        isSideMenuOpen = false
-//        isCaculatorOpen = false
-    }
-    
-    
-    // Caculator
     func configForKeyboardOpen(){
         caculatorContainerView.clipsToBounds = false
         bottomCalcu.constant = 0
@@ -103,7 +112,6 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.35, animations: {
             self.view.layoutIfNeeded()
         })
-//        isCaculatorOpen = !isCaculatorOpen
     }
     
     func configForKeyboardClose(){
@@ -112,5 +120,38 @@ class ViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sideMenu"{
+            sideMenuVC = segue.destination as? SideMenuTableVC
+            sideMenuVC?.delegate = self
+        }
+        if segue.identifier == "pageVC"{
+            pageVC = segue.destination as? PageVC
+        }
+    }
+}
+
+extension ViewController: SideMenuRecordsDelegate{
+    func passData(indexOf: Int) {
+        isSideMenuOpen = false
+        switch indexOf {
+        case 1:
+            pageVC?.jump(toIndex: 0)
+        case 2:
+            pageVC?.jump(toIndex: 1)
+        case 3:
+            pageVC?.jump(toIndex: 2)
+        case 4:
+            pageVC?.jump(toIndex: 3)
+        default:
+            return
+        }
+    }
+    
+    func passNameTitleMenu(name: String) {
+        control.setTitle(name, for: .normal)
+    }
 }
 

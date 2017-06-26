@@ -9,7 +9,12 @@
 import UIKit
 
 class MainTableVC: UITableViewController {
-
+    
+    static var instance: MainTableVC {
+        let storyboard = UIStoryboard(name: "Records", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "MainTableVC") as! MainTableVC
+    }
+    
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet var rightView: UIView!
@@ -21,12 +26,6 @@ class MainTableVC: UITableViewController {
         self.textField.rightView = rightView
         self.textField.rightViewMode = .always
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 extension MainTableVC: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

@@ -17,6 +17,11 @@
 		0E1D328A1EF905EF00E2E12A /* Image in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D32891EF905EF00E2E12A /* Image */; };
 		0E1D32901EF9071D00E2E12A /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D328F1EF9071D00E2E12A /* Book.png */; };
 		0E1E4E1B1EFBA84C00C965F4 /* MainTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */; };
+		0E5CE3D71F00B32B0060535C /* BaseModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3D61F00B32B0060535C /* BaseModelController.swift */; };
+		0E5CE3D91F00B51F0060535C /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3D81F00B51F0060535C /* RedVC.swift */; };
+		0E5CE3DB1F00B52E0060535C /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3DA1F00B52E0060535C /* GreenVC.swift */; };
+		0E5CE3DD1F00B53C0060535C /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3DC1F00B53C0060535C /* BlueVC.swift */; };
+		0E5CE3E11F00BF3B0060535C /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3E01F00BF3B0060535C /* PageVC.swift */; };
 		0E7F2C921EFE03B700220C24 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F2C911EFE03B700220C24 /* ViewExtension.swift */; };
 		0E7F2C941EFE0BA200220C24 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F2C931EFE0BA200220C24 /* Label.swift */; };
 		0E9D73FA1EF9301000598A95 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D73F91EF9301000598A95 /* Button.swift */; };
@@ -38,6 +43,11 @@
 		0E1D32891EF905EF00E2E12A /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Image; sourceTree = "<group>"; };
 		0E1D328F1EF9071D00E2E12A /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
 		0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableVC.swift; sourceTree = "<group>"; };
+		0E5CE3D61F00B32B0060535C /* BaseModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelController.swift; sourceTree = "<group>"; };
+		0E5CE3D81F00B51F0060535C /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedVC.swift; path = ../RedVC.swift; sourceTree = "<group>"; };
+		0E5CE3DA1F00B52E0060535C /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreenVC.swift; path = ../GreenVC.swift; sourceTree = "<group>"; };
+		0E5CE3DC1F00B53C0060535C /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlueVC.swift; path = ../BlueVC.swift; sourceTree = "<group>"; };
+		0E5CE3E01F00BF3B0060535C /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageVC.swift; path = ../PageVC.swift; sourceTree = "<group>"; };
 		0E7F2C911EFE03B700220C24 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		0E7F2C931EFE0BA200220C24 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		0E9D73F91EF9301000598A95 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -62,7 +72,6 @@
 			children = (
 				0E1D32761EF9057300E2E12A /* ViewController.swift */,
 				0E185FE71EFB441600BB8F6C /* SideMenuTableVC.swift */,
-				0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -88,6 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				0E1D32741EF9057300E2E12A /* AppDelegate.swift */,
+				0E5CE3D61F00B32B0060535C /* BaseModelController.swift */,
+				0E5CE3E01F00BF3B0060535C /* PageVC.swift */,
+				0E21D3511F010AF000F214AD /* MenuTab */,
 				0E185FE91EFB443500BB8F6C /* Controllers */,
 				0E87EBCD1EFA714900F6525C /* Storyboard */,
 				0E7F2C951EFE0D6B00220C24 /* Supports */,
@@ -99,6 +111,17 @@
 				0E1D327B1EF9057300E2E12A /* MoneyKeeper.xcdatamodeld */,
 			);
 			path = MoneyKeeper;
+			sourceTree = "<group>";
+		};
+		0E21D3511F010AF000F214AD /* MenuTab */ = {
+			isa = PBXGroup;
+			children = (
+				0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */,
+				0E5CE3DC1F00B53C0060535C /* BlueVC.swift */,
+				0E5CE3DA1F00B52E0060535C /* GreenVC.swift */,
+				0E5CE3D81F00B51F0060535C /* RedVC.swift */,
+			);
+			name = MenuTab;
 			sourceTree = "<group>";
 		};
 		0E7F2C951EFE0D6B00220C24 /* Supports */ = {
@@ -199,10 +222,15 @@
 			files = (
 				0E185FE81EFB441600BB8F6C /* SideMenuTableVC.swift in Sources */,
 				0E185FEB1EFB45B700BB8F6C /* CustomContainerView.swift in Sources */,
+				0E5CE3D71F00B32B0060535C /* BaseModelController.swift in Sources */,
+				0E5CE3E11F00BF3B0060535C /* PageVC.swift in Sources */,
+				0E5CE3D91F00B51F0060535C /* RedVC.swift in Sources */,
 				0E1D32771EF9057300E2E12A /* ViewController.swift in Sources */,
 				0E1E4E1B1EFBA84C00C965F4 /* MainTableVC.swift in Sources */,
+				0E5CE3DB1F00B52E0060535C /* GreenVC.swift in Sources */,
 				0E1D327D1EF9057300E2E12A /* MoneyKeeper.xcdatamodeld in Sources */,
 				0E7F2C941EFE0BA200220C24 /* Label.swift in Sources */,
+				0E5CE3DD1F00B53C0060535C /* BlueVC.swift in Sources */,
 				0E1D32751EF9057300E2E12A /* AppDelegate.swift in Sources */,
 				0E7F2C921EFE03B700220C24 /* ViewExtension.swift in Sources */,
 				0E9D73FA1EF9301000598A95 /* Button.swift in Sources */,
