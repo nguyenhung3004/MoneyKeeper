@@ -281,7 +281,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="fkV-zM-HsD">
-                            <rect key="frame" x="0.0" y="588" width="375" height="5"/>
+                            <rect key="frame" x="0.0" y="632" width="375" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <userDefinedRuntimeAttributes>
@@ -318,7 +318,7 @@
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số tiền" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fUV-ZJ-dh8">
                                                             <rect key="frame" x="0.0" y="0.0" width="355" height="70.5"/>
                                                             <nil key="textColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                     </subviews>
@@ -627,6 +627,9 @@
                                                                     <real key="value" value="3"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="borrowToPay:" destination="emH-44-GJl" eventType="touchUpInside" id="3nF-3j-sWT"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -652,8 +655,53 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wfA-21-fjf">
+                                        <rect key="frame" x="0.0" y="460" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wfA-21-fjf" id="0TV-22-56G">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdK-OB-SIh" customClass="ViewExtension" customModule="MoneyKeeper" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="0.0" width="355" height="43.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0w-gX-Eij">
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                                            <state key="normal" title="Người cho vay">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="L0w-gX-Eij" secondAttribute="bottom" id="78p-Eg-0CM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="L0w-gX-Eij" secondAttribute="trailing" id="gcd-cQ-RXu"/>
+                                                        <constraint firstItem="L0w-gX-Eij" firstAttribute="top" secondItem="HdK-OB-SIh" secondAttribute="top" id="wCl-SD-iPR"/>
+                                                        <constraint firstItem="L0w-gX-Eij" firstAttribute="leading" secondItem="HdK-OB-SIh" secondAttribute="leading" id="wFf-a3-Jp8"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="HdK-OB-SIh" secondAttribute="bottom" id="9LA-F5-r9C"/>
+                                                <constraint firstItem="HdK-OB-SIh" firstAttribute="leading" secondItem="0TV-22-56G" secondAttribute="leading" constant="10" id="A3X-S2-nyz"/>
+                                                <constraint firstAttribute="trailing" secondItem="HdK-OB-SIh" secondAttribute="trailing" constant="10" id="o4o-a6-WrQ"/>
+                                                <constraint firstItem="HdK-OB-SIh" firstAttribute="top" secondItem="0TV-22-56G" secondAttribute="top" id="zPr-5j-Mcp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="20" id="lJc-0G-pEL">
-                                        <rect key="frame" x="0.0" y="460" width="375" height="20"/>
+                                        <rect key="frame" x="0.0" y="504" width="375" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJc-0G-pEL" id="hSb-3c-3Dh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -662,7 +710,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="x7d-F3-M4E">
-                                        <rect key="frame" x="0.0" y="480" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="524" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x7d-F3-M4E" id="9rw-vt-7EQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -707,7 +755,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="20" id="oXQ-K9-4Oj">
-                                        <rect key="frame" x="0.0" y="524" width="375" height="20"/>
+                                        <rect key="frame" x="0.0" y="568" width="375" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXQ-K9-4Oj" id="h24-1k-0Eg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -716,7 +764,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NIy-Gt-sUG">
-                                        <rect key="frame" x="0.0" y="544" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="588" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NIy-Gt-sUG" id="NPM-ah-PUg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -755,6 +803,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="borrowToPay" destination="zlS-W6-H8u" id="xkr-n6-qtM"/>
                         <outlet property="rightView" destination="39B-a4-Amc" id="Dt8-KH-PgB"/>
                         <outlet property="textField" destination="fUV-ZJ-dh8" id="9iy-uv-ZdD"/>
                     </connections>
