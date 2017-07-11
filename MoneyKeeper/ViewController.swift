@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     var sideMenuVC: SideMenuTableVC?
     var pageVC: PageVC?
     @IBOutlet weak var sideMenuContainerView: CustomContainerView!
@@ -22,7 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomCalcu: NSLayoutConstraint!
     @IBOutlet weak var caculatorContainerView: UIView!
     
-
     @IBAction func sideMenuControl(_ sender: Any) {
         
         if isCaculatorOpen {
@@ -41,8 +41,8 @@ class ViewController: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(configForKeyboardOpen), name: Notification.Name.init("caculator"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(configForSideMenuClosingState), name: NSNotification.Name(rawValue: "hideSideMenu"), object: nil)
-        
     }
+    
     // Side Menu
     var isSideMenuOpen: Bool = true{
         didSet {
@@ -64,10 +64,10 @@ class ViewController: UIViewController {
         }
     }
    
-    
     func configForSideMenuOpeningState(){
         sideMenuContainerView.clipsToBounds = false
         topSideMenuContraint.constant = 0
+        self.coverButton.isHidden = false
         self.coverButton.alpha = 0.4
         self.coverButton.backgroundColor = .gray
     }
@@ -81,9 +81,7 @@ class ViewController: UIViewController {
         isSideMenuOpen = false
     }
     
-    
     // Caculator
-    
     var isCaculatorOpen: Bool = true{
         didSet {
             if isCaculatorOpen{
@@ -119,9 +117,7 @@ class ViewController: UIViewController {
         bottomTableVC.constant = 0
         tabBarController?.tabBar.isHidden = false
     }
-    
-    
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sideMenu"{
             sideMenuVC = segue.destination as? SideMenuTableVC
