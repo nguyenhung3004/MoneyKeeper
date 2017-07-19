@@ -42,9 +42,6 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-//        contentView.backgroundColor = .red
-//        label.textColor = .black
-//        button.backgroundColor = .red
         let views = [
             "button" : button,
             "image" : image,

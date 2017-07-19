@@ -33,7 +33,6 @@ struct Section {
 class CategoryDataService {
     static let shared: CategoryDataService = CategoryDataService()
     private var _sections: [Section] = []
-    
     var sections: [Section]{
         set {
             _sections = newValue
@@ -45,6 +44,19 @@ class CategoryDataService {
             return _sections
         }
         
+    }
+    
+    private var _loanDeft: [CustomCell] = []
+    var loanDeft: [CustomCell]{
+        set {
+            _loanDeft = newValue
+        }
+        get {
+            if _loanDeft.count == 0 {
+                updateLoanDeft()
+            }
+            return _loanDeft
+        }
     }
     
     func updateSection(){
@@ -72,6 +84,13 @@ class CategoryDataService {
                         CustomCell(name: "Car wash", image: #imageLiteral(resourceName: "Car wash")),
                         CustomCell(name: "Taxi", image: #imageLiteral(resourceName: "Taxi"))
             ])
+        ]
+    }
+    
+    func updateLoanDeft(){
+        _loanDeft = [
+            CustomCell(name: "Lend", image: #imageLiteral(resourceName: "Checked")),
+            CustomCell(name: "Repayment", image: #imageLiteral(resourceName: "Unchecked"))
         ]
     }
 }

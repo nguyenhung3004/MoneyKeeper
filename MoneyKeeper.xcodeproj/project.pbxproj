@@ -18,6 +18,8 @@
 		0E1D32901EF9071D00E2E12A /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D328F1EF9071D00E2E12A /* Book.png */; };
 		0E1E4E1B1EFBA84C00C965F4 /* MainTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */; };
 		0E23B27B1F113846008A8546 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23B27A1F113846008A8546 /* CollapsibleTableViewHeader.swift */; };
+		0E2A95511F19C4310001D936 /* LoanDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A95501F19C4310001D936 /* LoanDataSource.swift */; };
+		0E2A95531F19C5A50001D936 /* LoanDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A95521F19C5A50001D936 /* LoanDelegate.swift */; };
 		0E5CE3D71F00B32B0060535C /* BaseModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3D61F00B32B0060535C /* BaseModelController.swift */; };
 		0E5CE3D91F00B51F0060535C /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3D81F00B51F0060535C /* RedVC.swift */; };
 		0E5CE3DB1F00B52E0060535C /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3DA1F00B52E0060535C /* GreenVC.swift */; };
@@ -25,6 +27,7 @@
 		0E5CE3E11F00BF3B0060535C /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CE3E01F00BF3B0060535C /* PageVC.swift */; };
 		0E633D7E1F11571E00AE4737 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E633D7D1F11571E00AE4737 /* Extension.swift */; };
 		0E633D841F11603600AE4737 /* CategoryDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E633D831F11603600AE4737 /* CategoryDataService.swift */; };
+		0E6D07731F1EE18B005176A6 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D07721F1EE18B005176A6 /* Tutorial.storyboard */; };
 		0E7B60A81F0B280D0067072E /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7B60A71F0B280D0067072E /* CategoryVC.swift */; };
 		0E7F2C921EFE03B700220C24 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F2C911EFE03B700220C24 /* ViewExtension.swift */; };
 		0E7F2C941EFE0BA200220C24 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F2C931EFE0BA200220C24 /* Label.swift */; };
@@ -32,6 +35,7 @@
 		0EA186A91EFA103400898D53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA186A81EFA103400898D53 /* Main.storyboard */; };
 		0EA186AD1EFA1AB400898D53 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA186AC1EFA1AB400898D53 /* Note.storyboard */; };
 		0EA2D1851EFA5E2C005320B8 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA2D1841EFA5E2C005320B8 /* Records.storyboard */; };
+		0EDAD1EB1F1F13B400411E1A /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDAD1EA1F1F13B400411E1A /* Tutorial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,8 @@
 		0E1D328F1EF9071D00E2E12A /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
 		0E1E4E1A1EFBA84C00C965F4 /* MainTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableVC.swift; sourceTree = "<group>"; };
 		0E23B27A1F113846008A8546 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		0E2A95501F19C4310001D936 /* LoanDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanDataSource.swift; sourceTree = "<group>"; };
+		0E2A95521F19C5A50001D936 /* LoanDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanDelegate.swift; sourceTree = "<group>"; };
 		0E5CE3D61F00B32B0060535C /* BaseModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelController.swift; sourceTree = "<group>"; };
 		0E5CE3D81F00B51F0060535C /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedVC.swift; path = ../RedVC.swift; sourceTree = "<group>"; };
 		0E5CE3DA1F00B52E0060535C /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreenVC.swift; path = ../GreenVC.swift; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 		0E5CE3E01F00BF3B0060535C /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageVC.swift; path = ../PageVC.swift; sourceTree = "<group>"; };
 		0E633D7D1F11571E00AE4737 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0E633D831F11603600AE4737 /* CategoryDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDataService.swift; sourceTree = "<group>"; };
+		0E6D07721F1EE18B005176A6 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		0E7B60A71F0B280D0067072E /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		0E7F2C911EFE03B700220C24 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		0E7F2C931EFE0BA200220C24 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -62,6 +69,7 @@
 		0EA186A81EFA103400898D53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		0EA186AC1EFA1AB400898D53 /* Note.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = SOURCE_ROOT; };
 		0EA2D1841EFA5E2C005320B8 /* Records.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = SOURCE_ROOT; };
+		0EDAD1EA1F1F13B400411E1A /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				0E7B60A71F0B280D0067072E /* CategoryVC.swift */,
+				0E2A95501F19C4310001D936 /* LoanDataSource.swift */,
+				0E2A95521F19C5A50001D936 /* LoanDelegate.swift */,
 				0E23B27A1F113846008A8546 /* CollapsibleTableViewHeader.swift */,
 				0E633D831F11603600AE4737 /* CategoryDataService.swift */,
 			);
@@ -168,6 +178,8 @@
 				0EA186A81EFA103400898D53 /* Main.storyboard */,
 				0EA2D1841EFA5E2C005320B8 /* Records.storyboard */,
 				0EA186AC1EFA1AB400898D53 /* Note.storyboard */,
+				0E6D07721F1EE18B005176A6 /* Tutorial.storyboard */,
+				0EDAD1EA1F1F13B400411E1A /* Tutorial.swift */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -238,6 +250,7 @@
 				0EA186A91EFA103400898D53 /* Main.storyboard in Resources */,
 				0E1D32821EF9057300E2E12A /* LaunchScreen.storyboard in Resources */,
 				0E1D32901EF9071D00E2E12A /* Book.png in Resources */,
+				0E6D07731F1EE18B005176A6 /* Tutorial.storyboard in Resources */,
 				0E1D327F1EF9057300E2E12A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +267,7 @@
 				0E185FEB1EFB45B700BB8F6C /* CustomContainerView.swift in Sources */,
 				0E23B27B1F113846008A8546 /* CollapsibleTableViewHeader.swift in Sources */,
 				0E5CE3D71F00B32B0060535C /* BaseModelController.swift in Sources */,
+				0E2A95531F19C5A50001D936 /* LoanDelegate.swift in Sources */,
 				0E5CE3E11F00BF3B0060535C /* PageVC.swift in Sources */,
 				0E5CE3D91F00B51F0060535C /* RedVC.swift in Sources */,
 				0E1D32771EF9057300E2E12A /* ViewController.swift in Sources */,
@@ -264,8 +278,10 @@
 				0E7F2C941EFE0BA200220C24 /* Label.swift in Sources */,
 				0E5CE3DD1F00B53C0060535C /* BlueVC.swift in Sources */,
 				0E1D32751EF9057300E2E12A /* AppDelegate.swift in Sources */,
+				0E2A95511F19C4310001D936 /* LoanDataSource.swift in Sources */,
 				0E7F2C921EFE03B700220C24 /* ViewExtension.swift in Sources */,
 				0E9D73FA1EF9301000598A95 /* Button.swift in Sources */,
+				0EDAD1EB1F1F13B400411E1A /* Tutorial.swift in Sources */,
 				0E7B60A81F0B280D0067072E /* CategoryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
